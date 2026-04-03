@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Purrduct Times Tables</title>
+    <link rel="stylesheet" href="storefront.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="score-chip hidden" data-score-chip aria-live="polite">Correct: 0</div>
+
+      <section class="screen screen-active landing-screen" data-screen="landing">
+        <div class="landing-layout">
+          <div class="hero-panel">
+            <p class="eyebrow">Cat Academy</p>
+            <h1>Purrduct Times Tables</h1>
+            <p class="hero-copy">
+              Practice multiplication tables from 11 to 15 in a playful cat-themed challenge.
+              Pick your tables, question count, and timer, then race through one full-screen
+              question at a time.
+            </p>
+            <div class="hero-cat" aria-hidden="true">
+              <div class="cat-ears"></div>
+              <div class="cat-face">
+                <span class="cat-eye left"></span>
+                <span class="cat-eye right"></span>
+                <span class="cat-nose"></span>
+                <span class="cat-mouth"></span>
+                <span class="cat-whiskers left"></span>
+                <span class="cat-whiskers right"></span>
+              </div>
+            </div>
+          </div>
+
+          <form class="control-panel" data-config-form>
+            <div class="panel-header">
+              <p class="eyebrow">Build Your Test</p>
+              <h2>Choose your practice mix</h2>
+            </div>
+
+            <fieldset class="option-group">
+              <legend>1. Which tables do you want to practice?</legend>
+              <div class="table-grid">
+                <label class="table-pill">
+                  <input type="checkbox" name="tables" value="11" checked />
+                  <span>11s</span>
+                </label>
+                <label class="table-pill">
+                  <input type="checkbox" name="tables" value="12" checked />
+                  <span>12s</span>
+                </label>
+                <label class="table-pill">
+                  <input type="checkbox" name="tables" value="13" checked />
+                  <span>13s</span>
+                </label>
+                <label class="table-pill">
+                  <input type="checkbox" name="tables" value="14" checked />
+                  <span>14s</span>
+                </label>
+                <label class="table-pill">
+                  <input type="checkbox" name="tables" value="15" checked />
+                  <span>15s</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="split-options">
+              <label class="field">
+                <span>2. How many questions?</span>
+                <select name="questionCount">
+                  <option value="10">10 questions</option>
+                  <option value="15" selected>15 questions</option>
+                  <option value="20">20 questions</option>
+                  <option value="25">25 questions</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>3. How much time?</span>
+                <select name="timeLimit">
+                  <option value="60">1 minute</option>
+                  <option value="90" selected>1.5 minutes</option>
+                  <option value="120">2 minutes</option>
+                  <option value="180">3 minutes</option>
+                </select>
+              </label>
+            </div>
+
+            <p class="helper-text" data-form-message>
+              Select at least one table to begin the challenge.
+            </p>
+
+            <button class="start-button" type="submit">Start the test</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="screen quiz-screen" data-screen="quiz" aria-live="polite">
+        <div class="quiz-meta">
+          <div class="status-pill" data-progress-label>Question 1 of 10</div>
+          <div class="status-pill timer-pill" data-timer-label>Time left: 01:30</div>
+        </div>
+
+        <div class="quiz-card">
+          <p class="eyebrow">Solve this cat challenge</p>
+          <div class="question-display" data-question-text>11 x 3</div>
+          <form class="answer-form" data-answer-form>
+            <label class="answer-label" for="answer-input">Type your answer</label>
+            <input
+              id="answer-input"
+              class="answer-input"
+              name="answer"
+              type="number"
+              inputmode="numeric"
+              autocomplete="off"
+              required
+            />
+            <button class="answer-button" type="submit">Submit answer</button>
+          </form>
+          <p class="question-hint" data-question-hint>
+            Stay calm, think it through, and press Enter when you are ready.
+          </p>
+        </div>
+      </section>
+
+      <section class="screen results-screen" data-screen="results">
+        <div class="results-card">
+          <p class="eyebrow">Report Card</p>
+          <h2>Your cat quiz analysis</h2>
+          <p class="results-summary" data-results-summary></p>
+          <div class="results-grid" data-results-grid></div>
+          <button class="start-button secondary-button" type="button" data-restart-button>
+            Practice again
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="storefront.js"></script>
+  </body>
+</html>
